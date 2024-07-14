@@ -1,0 +1,119 @@
+-- This project utilizes the following Superstore data: 
+
+CREATE TABLE superstore (
+    item_id INTEGER PRIMARY KEY,
+    item_name TEXT,
+    category TEXT,
+    price DECIMAL(10, 2),
+    stock_quantity INTEGER,
+    average_rating DECIMAL(3, 2)
+);
+
+INSERT INTO superstore (item_id, item_name, category, price, stock_quantity, average_rating)
+VALUES
+    (1, 'Stainless Steel Cookware Set', 'Kitchen Supplies', 89.99, 50, 4.6),
+    (2, 'Memory Foam Mattress', 'Furnishings', 499.99, 30, 4.8),
+    (3, 'Smart LED TV', 'Electronics', 549.00, 20, 4.5),
+    (4, 'Robot Vacuum Cleaner', 'Appliances', 199.50, 40, 4.3),
+    (5, 'Wireless Bluetooth Speaker', 'Electronics', 39.99, 60, 4.2),
+    (6, 'Non-Stick Baking Set', 'Kitchen Supplies', 29.95, 80, 4.4),
+    (7, 'Cotton Bedding Set', 'Furnishings', 89.00, 25, 4.7),
+    (8, 'Smart Home Security Camera', 'Electronics', 79.95, 15, 4.1),
+    (9, 'Air Purifier', 'Appliances', 129.50, 35, 4.6),
+    (10, 'Premium Coffee Maker', 'Kitchen Supplies', 79.99, 50, 4.9),
+    (11, 'Ergonomic Office Chair', 'Furnishings', 189.00, 20, 4.5),
+    (12, 'Wireless Earbuds', 'Electronics', 49.99, 75, 4.3),
+    (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
+    (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
+    (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+/*
+This set of SQL queries retrieves various details from the 'superstore' table:
+
+1. Displays the first 15 rows of the 'superstore' table.
+2. Finds the item with the lowest stock in each category.
+3. Finds the item with the highest stock in each category.
+4. Finds the most expensive item in each category.
+5. Finds the least expensive item in each category.
+6. Finds the item with the lowest rating in each category.
+7. Finds the item with the highest rating in each category.
+8. Finds the average price of items in each category.
+9. Finds the average rating of items in each category.
+*/
+
+-- Display table
+SELECT *
+FROM superstore
+LIMIT 15;
+
+-- Which item is lowest in stock from each category
+SELECT item_name, category, stock_quantity AS lowest_stock
+FROM superstore
+WHERE (category, stock_quantity) IN (
+    SELECT category, MIN(stock_quantity)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY stock_quantity;
+
+-- Which item is highest in stock from each category
+SELECT item_name, category, stock_quantity AS highest_stock
+FROM superstore
+WHERE (category, stock_quantity) IN (
+    SELECT category, MAX(stock_quantity)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY stock_quantity DESC;
+
+-- What is the most expensive item from each category?
+SELECT item_name, category, price AS highest_price
+FROM superstore
+WHERE (category, price) IN (
+    SELECT category, MAX(price)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY price DESC;
+
+-- What is the least expensive item from each category?
+SELECT item_name, category, price AS lowest_price
+FROM superstore
+WHERE (category, price) IN (
+    SELECT category, MIN(price)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY price;
+
+-- What is the average price of an item from each category?
+SELECT category, AVG(price) AS average_price
+FROM superstore
+GROUP BY category
+ORDER BY average_price DESC;
+
+-- Which item has the lowest rating from each category
+SELECT item_name, category, average_rating AS lowest_rating
+FROM superstore
+WHERE (category, average_rating) IN (
+    SELECT category, MIN(average_rating)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY average_rating;
+
+-- Which item has the highest rating from each category
+SELECT item_name, category, average_rating AS highest_rating
+FROM superstore
+WHERE (category, average_rating) IN (
+    SELECT category, MAX(average_rating)
+    FROM superstore
+    GROUP BY category
+)
+ORDER BY average_rating DESC;
+
+-- What is the average rating of an item from each category?
+SELECT category, AVG(average_rating) AS average_rating
+FROM superstore
+GROUP BY category
+ORDER BY average_rating DESC;
