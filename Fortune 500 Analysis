@@ -61,18 +61,14 @@ VALUES
 /*
 This SQL script performs various analyses on the 'fortune_companies' table:
 
-1. Displays all records from the 'fortune_companies' table.
-2. Finds companies with an average revenue of 250 billion or more.
-3. Identifies the technology company with the highest revenue.
-4. Identifies the technology company with the lowest revenue.
-5. Lists companies that provide healthcare benefits.
-6. Lists companies that provide healthcare benefits and have at least 20 paid time off days.
-7. Identifies maternity-friendly companies in the healthcare industry.
-8. Determines the industry with the most employees.
+1. Finds companies with an average revenue of 250 billion or more.
+2. Identifies the technology company with the highest revenue.
+3. Identifies the technology company with the lowest revenue.
+4. Lists companies that provide healthcare benefits.
+5. Lists companies that provide healthcare benefits and have at least 20 paid time off days.
+6. Identifies maternity-friendly companies in the healthcare industry.
+7. Determines the industry with the most employees.
 */
-
--- Display table
-SELECT * FROM fortune_companies;
 
 -- Which companies have an average revenue of 250 billion or more
 SELECT company_name, AVG(revenue) AS average_revenue
