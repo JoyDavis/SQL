@@ -37,3 +37,18 @@ Welcome to the Netflix Database Analysis project! This project involves analyzin
 - List all movies and TV shows in alphabetical order.
 - Find the director of a specific movie, "The Starling".
 - Identify the oldest movie in the database and the year it was made.
+
+### [4. Customer and Order Analytics](https://github.com/JoyDavis/SQL/blob/main/Customer%20and%20Order%20Analytics) 📈🛒
+   
+Welcome to the Customer and Order Analytics project! This project involves querying a database with multiple tables to extract valuable insights and statistics about customer and order data. The primary goal is to utilize SQL queries to analyze sales patterns, customer behavior, and product performance.
+
+#### Key Objectives:
+- Determine the total number of orders placed in January.
+- Identify the number of iPhone orders placed in January.
+- Retrieve customer account numbers for orders placed in February.
+- Find the cheapest product sold in January and its price.
+- Calculate total revenue for each product sold in January.
+- Analyze product sales and revenue at a specific location in February.
+- Identify locations in New York that received at least 3 orders in January and count the orders.
+- Determine the average quantity of products purchased per account in February.
+- Identify the product that brought in the most revenue in January.
