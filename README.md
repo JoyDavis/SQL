@@ -2,8 +2,6 @@
 # Welcome To My SQL Portfolio! 🎉📊
 As an aspiring data analyst, I have created this repository to demonstrate my proficiency in SQL through a series of projects. Each project focuses on different analytical tasks, utilizing various SQL techniques to extract meaningful insights from datasets. This collection serves as a testament to my analytical capabilities and my ability to work with SQL databases effectively.
 
-Dive in and explore the world of data analysis with me! 🌟
-
 ## Project Overviews
 ### [1. Superstore Analysis](https://github.com/JoyDavis/SQL/blob/main/Superstore%20Database) 🛒
    
@@ -15,7 +13,6 @@ Welcome to the Superstore Analysis project! This project dives into a fictional 
 - Customer Ratings: Analyze customer ratings to highlight the best and worst-rated items, helping improve product offerings.
 - Average Calculations: Calculate the average price and rating of items within each category to get an overall sense of product performance.
   
-By exploring this dataset, I aim to uncover trends and patterns that can lead to better business strategies and improved customer satisfaction. 😃
 
 ### [2. Fortune 500 Analysis](https://github.com/JoyDavis/SQL/blob/main/Fortune%20500%20Analysis) 📊
    
@@ -28,5 +25,15 @@ Welcome to the Fortune 500 Companies Analysis project! This project involves ana
 - Identify companies that provide healthcare benefits and have at least 20 paid time off days.
 - Maternity Friendliness: Evaluate and classify companies in the healthcare industry based on their maternity leave weeks.
 - Industry Analysis: Determine which industry has the most employees.
+  
 
-By exploring this dataset, I aim to uncover trends and patterns that can lead to better business strategies and improved employee satisfaction. 😃
+### [3. Netflix Database Analysis](https://github.com/JoyDavis/SQL/blob/main/Netflix%20Database%20Analysis) 🎬📺
+   
+Welcome to the Netflix Database Analysis project! This project involves analyzing a fictional dataset of Netflix titles to uncover insights related to movies and TV shows available on the platform. The primary goal is to utilize SQL queries to extract meaningful information from the dataset.
+
+#### Key Objectives:
+- Determine the total number of movies in the database.
+- Identify the most recently added movie or TV show in the database.
+- List all movies and TV shows in alphabetical order.
+- Find the director of a specific movie, "The Starling".
+- Identify the oldest movie in the database and the year it was made.
