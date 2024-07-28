@@ -58,7 +58,15 @@ VALUES
     ('s20', NULL, 'Blanca SuÃ¡rez| IvÃ¡n Marcos| Ã“scar Casas| AdriÃ¡n Lastra| Francesc Garrido| Stefan Weinert| Julia MÃ¶ller| Alicia Chojnowski')
     ;
 
--- This set of SQL queries retrieves various details from the 'netflix_titles_info' and 'netflix_people' tables:
+/*
+This set of SQL queries retrieves various details from the 'netflix_titles_info' and 'netflix_people' tables:
+
+1. Counts the total number of movie titles in the database.
+2. Identifies the most recently added movie or TV show in the database.
+3. Lists all movies and TV shows in alphabetical order.
+4. Finds the director of the movie "The Starling".
+5. Identifies the oldest movie in the database and the year it was made.
+*/
 
 -- How many movie titles are there in the database?
 SELECT COUNT(type) number_of_movies
