@@ -30,21 +30,15 @@ VALUES
 /*
 This set of SQL queries retrieves various details from the 'superstore' table:
 
-1. Displays the first 15 rows of the 'superstore' table.
-2. Finds the item with the lowest stock in each category.
-3. Finds the item with the highest stock in each category.
-4. Finds the most expensive item in each category.
-5. Finds the least expensive item in each category.
-6. Finds the item with the lowest rating in each category.
-7. Finds the item with the highest rating in each category.
-8. Finds the average price of items in each category.
-9. Finds the average rating of items in each category.
+1. Finds the item with the lowest stock in each category.
+2. Finds the item with the highest stock in each category.
+3. Finds the most expensive item in each category.
+4. Finds the least expensive item in each category.
+5. Finds the item with the lowest rating in each category.
+6. Finds the item with the highest rating in each category.
+7. Finds the average price of items in each category.
+8. Finds the average rating of items in each category.
 */
-
--- Display table
-SELECT *
-FROM superstore
-LIMIT 15;
 
 -- Which item is lowest in stock from each category
 SELECT item_name, category, stock_quantity AS lowest_stock
