@@ -27,7 +27,7 @@ Welcome to the Fortune 500 Companies Analysis project! This project involves ana
 - Industry Analysis: Determine which industry has the most employees.
   
 
-### [3. Netflix Database Analysis](https://github.com/JoyDavis/SQL/blob/main/Netflix%20Database%20Analysis) 🎬📺
+### [3. Netflix Database Analysis](https://github.com/JoyDavis/SQL/blob/main/Netflix%20Database%20Analysis) 🎬
    
 Welcome to the Netflix Database Analysis project! This project involves analyzing a fictional dataset of Netflix titles to uncover insights related to movies and TV shows available on the platform. The primary goal is to utilize SQL queries to extract meaningful information from the dataset.
 
@@ -38,7 +38,7 @@ Welcome to the Netflix Database Analysis project! This project involves analyzin
 - Find the director of a specific movie, "The Starling".
 - Identify the oldest movie in the database and the year it was made.
 
-### [4. Customer and Order Analytics](https://github.com/JoyDavis/SQL/blob/main/Customer%20and%20Order%20Analytics) 📈🛒
+### [4. Customer and Order Analytics](https://github.com/JoyDavis/SQL/blob/main/Customer%20and%20Order%20Analytics) 📈
    
 Welcome to the Customer and Order Analytics project! This project involves querying a database with multiple tables to extract valuable insights and statistics about customer and order data. The primary goal is to utilize SQL queries to analyze sales patterns, customer behavior, and product performance.
 
