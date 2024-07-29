@@ -52,3 +52,21 @@ Welcome to the Customer and Order Analytics project! This project involves query
 - Identify locations in New York that received at least 3 orders in January and count the orders.
 - Determine the average quantity of products purchased per account in February.
 - Identify the product that brought in the most revenue in January.
+
+
+### [5. Spotify Top 50 Tracks Analysis](https://github.com/JoyDavis/SQL/blob/main/Spotify%20Analytics)  🎶
+   
+Welcome to the Spotify Top 50 Tracks Analysis project! This project involves querying a database with the top 50 tracks on Spotify for the year 2021. The primary goal is to utilize SQL queries to extract valuable insights and statistics about these tracks, focusing on attributes like popularity, danceability, energy, and more.
+
+#### Key Objectives:
+- Determine the average popularity, danceability, and energy for each track by each artist.
+- Identify the top 10 tracks with the highest danceability scores.
+- Find the top 10 artists with the highest average popularity.
+- Identify the most popular song and the artist who performed it.
+- List the top 5 tracks with the highest energy scores.
+- Find the top 3 tracks with the highest loudness levels.
+- Retrieve tracks with an acousticness score greater than 0.5.
+- Calculate the average tempo for each artist.
+- Identify the top 5 tracks with the highest valence scores, indicating the happiest tracks.
+- Calculate the average duration of tracks for each artist, expressed in seconds.
+- List artists who have more than one track in the top 50, along with the count of their tracks.
