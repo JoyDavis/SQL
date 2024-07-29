@@ -54,7 +54,7 @@ Welcome to the Customer and Order Analytics project! This project involves query
 - Identify the product that brought in the most revenue in January.
 
 
-### [5. Spotify Top 50 Tracks Analysis](https://github.com/JoyDavis/SQL/blob/main/Spotify%20Analytics)  🎶
+### [5. Spotify Top 50 Tracks Analysis](https://github.com/JoyDavis/SQL/blob/main/Spotify%20Top%2050%20Tracks%20Analysis)  🎶
    
 Welcome to the Spotify Top 50 Tracks Analysis project! This project involves querying a database with the top 50 tracks on Spotify for the year 2021. The primary goal is to utilize SQL queries to extract valuable insights and statistics about these tracks, focusing on attributes like popularity, danceability, energy, and more.
 
