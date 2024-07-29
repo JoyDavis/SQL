@@ -1,0 +1,114 @@
+/*
+This set of SQL queries retrieves various details from the Kaggle 'Spotifydata' table:
+
+1. Calculates the average popularity, danceability, and energy for each track by each artist.
+2. Identifies the top 10 tracks with the highest danceability scores.
+3. Finds the top 10 artists with the highest average popularity.
+4. Identifies the most popular song and the artist who performed it.
+5. Lists the top 5 tracks with the highest energy scores.
+6. Finds the top 3 tracks with the highest loudness levels.
+7. Retrieves tracks with an acousticness score greater than 0.5.
+8. Calculates the average tempo for each artist.
+9. Identifies the top 5 tracks with the highest valence scores, indicating the happiest tracks.
+10. Calculates the average duration of tracks for each artist, expressed in seconds.
+11. Lists artists who have more than one track in the top 50, along with the count of their tracks.
+*/
+
+-- 1. Calculates the average popularity, danceability, and energy for each track by each artist.
+SELECT
+artist_name
+,track_name
+,avg(popularity)
+,avg(danceability)
+,avg(energy)
+FROM BIT_DB.spotifydata
+GROUP BY artist_name, track_name;
+
+-- 2. Top 10 Tracks with Highest Danceability:
+SELECT
+track_name,
+artist_name,
+danceability
+FROM 
+BIT_DB.Spotifydata
+ORDER BY 
+danceability DESC
+LIMIT 10;
+
+-- 3. Top 10 Artists based on popularity
+SELECT 
+artist_name,
+ROUND(AVG(popularity)) AS average_popularity
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY average_popularity DESC
+LIMIT 10;
+
+-- 4. Most popular song and who is the artist
+SELECT
+artist_name,
+track_name,
+popularity
+FROM BIT_DB.Spotifydata
+ORDER BY popularity DESC
+LIMIT 1;
+
+-- 5. Top 5 Most Energetic Tracks
+SELECT
+track_name,
+artist_name,
+energy
+FROM BIT_DB.Spotifydata
+ORDER BY energy DESC
+LIMIT 5;
+
+-- 6. Top 3 Loudest Songs
+SELECT
+track_name,
+loudness
+FROM BIT_DB.Spotifydata
+ORDER BY loudness DESC
+LIMIT 3;
+
+-- 7. Tracks with Acousticness Greater Than 0.5:
+SELECT
+track_name,
+artist_name,
+acousticness
+FROM BIT_DB.Spotifydata
+WHERE acousticness > 0.5
+ORDER BY acousticness DESC;
+
+-- 8. Average Tempo by Artist:
+SELECT
+artist_name,
+ROUND(AVG(tempo), 2) AS average_tempo
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY average_tempo DESC;
+
+-- 9. Top 5 Tracks with Highest Valence (Happiest Tracks):
+SELECT
+artist_name,
+track_name,
+valence
+FROM BIT_DB.Spotifydata
+ORDER BY valence DESC
+LIMIT 5;
+
+-- 10. Average Duration of Tracks by Artist:
+SELECT
+artist_name,
+ROUND(AVG(duration_ms) / 1000, 2) AS average_duration_seconds
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY average_duration_seconds DESC;
+
+-- 11. Artists with More Than One Track in the Top 50:
+SELECT
+artist_name,
+COUNT(track_name) AS track_count
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+HAVING track_count > 1
+ORDER BY track_count DESC;
