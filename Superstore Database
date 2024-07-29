@@ -40,7 +40,7 @@ This set of SQL queries retrieves various details from the 'superstore' table:
 8. Finds the average rating of items in each category.
 */
 
--- Which item is lowest in stock from each category
+-- 1. Which item is lowest in stock from each category
 SELECT item_name, category, stock_quantity AS lowest_stock
 FROM superstore
 WHERE (category, stock_quantity) IN (
@@ -50,7 +50,7 @@ WHERE (category, stock_quantity) IN (
 )
 ORDER BY stock_quantity;
 
--- Which item is highest in stock from each category
+-- 2. Which item is highest in stock from each category
 SELECT item_name, category, stock_quantity AS highest_stock
 FROM superstore
 WHERE (category, stock_quantity) IN (
@@ -60,7 +60,7 @@ WHERE (category, stock_quantity) IN (
 )
 ORDER BY stock_quantity DESC;
 
--- What is the most expensive item from each category?
+-- 3. What is the most expensive item from each category?
 SELECT item_name, category, price AS highest_price
 FROM superstore
 WHERE (category, price) IN (
@@ -70,7 +70,7 @@ WHERE (category, price) IN (
 )
 ORDER BY price DESC;
 
--- What is the least expensive item from each category?
+-- 4. What is the least expensive item from each category?
 SELECT item_name, category, price AS lowest_price
 FROM superstore
 WHERE (category, price) IN (
@@ -80,13 +80,13 @@ WHERE (category, price) IN (
 )
 ORDER BY price;
 
--- What is the average price of an item from each category?
+-- 5. What is the average price of an item from each category?
 SELECT category, AVG(price) AS average_price
 FROM superstore
 GROUP BY category
 ORDER BY average_price DESC;
 
--- Which item has the lowest rating from each category
+-- 6. Which item has the lowest rating from each category
 SELECT item_name, category, average_rating AS lowest_rating
 FROM superstore
 WHERE (category, average_rating) IN (
@@ -96,7 +96,7 @@ WHERE (category, average_rating) IN (
 )
 ORDER BY average_rating;
 
--- Which item has the highest rating from each category
+-- 7. Which item has the highest rating from each category
 SELECT item_name, category, average_rating AS highest_rating
 FROM superstore
 WHERE (category, average_rating) IN (
@@ -106,7 +106,7 @@ WHERE (category, average_rating) IN (
 )
 ORDER BY average_rating DESC;
 
--- What is the average rating of an item from each category?
+-- 8. What is the average rating of an item from each category?
 SELECT category, AVG(average_rating) AS average_rating
 FROM superstore
 GROUP BY category
