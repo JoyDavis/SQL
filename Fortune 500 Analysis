@@ -70,14 +70,14 @@ This SQL script performs various analyses on the 'fortune_companies' table:
 7. Determines the industry with the most employees.
 */
 
--- Which companies have an average revenue of 250 billion or more
+-- 1. Which companies have an average revenue of 250 billion or more
 SELECT company_name, AVG(revenue) AS average_revenue
 FROM fortune_companies
 GROUP BY company_name
 HAVING AVG(revenue) >= 250
 ORDER BY average_revenue DESC;
 
--- Which technology company has the highest revenue
+-- 2. Which technology company has the highest revenue
 SELECT company_name, industry, MAX(revenue) AS highest_revenue
 FROM fortune_companies
 WHERE industry = 'Technology'
@@ -85,7 +85,7 @@ GROUP BY company_name, industry
 ORDER BY highest_revenue DESC
 LIMIT 1;
 
--- Which technology company has the lowest revenue
+-- 3. Which technology company has the lowest revenue
 SELECT company_name, industry, MIN(revenue) AS lowest_revenue
 FROM fortune_companies
 WHERE industry = 'Technology'
@@ -93,19 +93,19 @@ GROUP BY company_name, industry
 ORDER BY lowest_revenue ASC
 LIMIT 1;
 
--- Which companies have healthcare benefits?
+-- 4. Which companies have healthcare benefits?
 SELECT company_name, healthcare_benefits
 FROM fortune_companies
 WHERE healthcare_benefits = 1;
 
--- Which companies have healthcare benefits AND at least 20 paid time off days?
+-- 5. Which companies have healthcare benefits AND at least 20 paid time off days?
 SELECT company_name, healthcare_benefits, paid_time_off_days
 FROM fortune_companies
 WHERE healthcare_benefits = 1
 AND paid_time_off_days >= 20
 ORDER BY paid_time_off_days DESC;
 
--- Assign all the companies in the Healthcare industry as "mother friendly workplace", "acceptable", or "not acceptable" based on the maternity leave offered.
+-- 6. Assign all the companies in the Healthcare industry as "mother friendly workplace", "acceptable", or "not acceptable" based on the maternity leave offered.
 SELECT company_name, industry, maternity_leave_weeks,
 CASE 
     WHEN maternity_leave_weeks >= 12 THEN 'mother friendly workplace'
@@ -116,7 +116,7 @@ FROM fortune_companies
 WHERE industry = 'Healthcare'
 ORDER BY maternity_leave_weeks DESC;
 
--- Which industry has the most employees?
+-- 7. Which industry has the most employees?
 SELECT industry, SUM(employees) AS highest_employees
 FROM fortune_companies
 GROUP BY industry
